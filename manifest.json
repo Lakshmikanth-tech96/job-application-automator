@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Job Application Automator",
+  "description": "Automatically find jobs and apply on LinkedIn, Indeed, and other job websites in Canada.",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "index.html"
+  },
+  "host_permissions": [
+    "https://*.linkedin.com/*",
+    "https://*.indeed.com/*",
+    "https://*.ca/*"
+  ]
+}
