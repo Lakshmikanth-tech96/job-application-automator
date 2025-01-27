@@ -3,35 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Application Automator</title>
+  <title>Job Application Helper</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 10px;
-      background-color: #f4f4f4;
-      width: 300px;
-    }
-    button {
-      padding: 10px;
-      background-color: #0073e6;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #005bb5;
-    }
+    body { font-family: Arial, sans-serif; padding: 10px; }
+    #jobStatus { margin-top: 10px; }
   </style>
 </head>
 <body>
-  <h1>Job Application Automator</h1>
-  <button id="start">Start Automating</button>
+  <h1>Job Application Helper</h1>
+  <button id="applyButton">Apply to Jobs</button>
+  <div id="jobStatus"></div>
 
   <script>
-    // Simple script for button click event
-    document.getElementById('start').addEventListener('click', () => {
-      chrome.runtime.sendMessage({ action: 'startJobSearch' });
-      alert("Automation started! Checking job sites...");
+    document.getElementById('applyButton').addEventListener('click', function() {
+      document.getElementById('jobStatus').textContent = 'Searching for jobs and applying...';
+      chrome.runtime.sendMessage({ action: 'applyToJob' });
     });
   </script>
 </body>
