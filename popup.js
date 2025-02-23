@@ -1,3 +1,4 @@
 document.getElementById('searchBtn').addEventListener('click', function() {
-  chrome.runtime.sendMessage({ action: 'searchJobs' });
+  console.log('Search for jobs clicked');
+  // Future functionality to search for jobs can be added here
 });
