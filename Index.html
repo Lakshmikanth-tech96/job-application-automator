@@ -7,14 +7,9 @@
 </head>
 <body>
   <button id="searchBtn">Search for Jobs</button>
-
-  <!-- Include background.js -->
   <script src="background.js"></script>
-
   <script>
-    // Event listener for the "Search for Jobs" button
     document.getElementById('searchBtn').addEventListener('click', function() {
-      // Send a message to background.js to start the job search process
       chrome.runtime.sendMessage({ action: 'searchJobs' });
     });
   </script>
